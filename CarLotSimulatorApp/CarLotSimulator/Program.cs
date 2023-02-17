@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CarLotSimulator
 {
@@ -18,6 +19,8 @@ namespace CarLotSimulator
             //Now that the Car class is created we can instanciate 3 new cars
             //Set the properties for each of the cars
             //Call each of the methods for each car
+
+            //dot notation
             Car dodge = new Car();
             dodge.Year = 2006;
             dodge.Make = "Dodge";
@@ -26,6 +29,7 @@ namespace CarLotSimulator
             dodge.HonkNoise = Car.MakeHonkNoise("loud");
             dodge.IsDrivable = true;
 
+            //object initilizer syntax
             var ford = new Car()
             {
                 Year = 1996,
@@ -35,12 +39,14 @@ namespace CarLotSimulator
                 HonkNoise = Car.MakeHonkNoise("soft"),
                 IsDrivable = false,
             };
-
+            
+            //custom constructor (needs a custom constructor)
             var chevy = new Car(2020, "Chevy", "Camero", Car.MakeEngineNoise("loud"), Car.MakeHonkNoise("loud"), true);
             var carList = new List<Car> { dodge, ford, chevy };
-            
-            
 
+
+            Console.WriteLine($"Numbers of cars created: {CarLot.numberOfCars}");
+            Console.WriteLine();
             
             foreach (var vehicle in carList)
             {

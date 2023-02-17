@@ -9,13 +9,14 @@ namespace CarLotSimulator
 {
     internal class Car
     {
-        public Car() 
+        public Car() //creating defult constructor
         {
+            CarLot.numberOfCars++;
         
         }
         public int Year { get; set; }
         public string Make { get; set; }
-        public string Model { get; set; }
+        public string Model { get; set; }                       //properties
         public string EngineNoise { get; set; }
         public string HonkNoise { get; set; }
         public bool IsDrivable { get; set; }
@@ -45,7 +46,8 @@ namespace CarLotSimulator
             }
             
         }
-        public Car(int year, string make, string model, string engineNoise, string honkNoise, bool isDrivable)
+        //Custom Class
+        public Car(int year, string make, string model, string engineNoise, string honkNoise, bool isDrivable)//special member method
         {
             Year = year;
             Make = make;
